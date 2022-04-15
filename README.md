@@ -6,7 +6,7 @@
 - Find preliminary datasets for your project (All Team Members)
 - Perform rudimentary EDA on the datasets that have been found (Drew and Alyssa)
 - Create a mockup of the database (Beth)
-- Create a mockup of the machine learning model you are going to use 
+- Create a mockup of the machine learning model you are going to use (Joshua and Julia)
 
 ## Team Member Names 
 - Beth Berry 
