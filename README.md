@@ -12,7 +12,7 @@
 5. Create a mockup of the machine learning model you are going to use: (Joshua and Julia)
 	- Testing both Tensorflow and RandomForest for best results
 		- [link_to_ML](machineLearning.ipynb) (Tensorflow)
-		- [link to RF](RandomForest Machine Learning.ipynb) (RandomForest)
+		- [link_to_RF](RandomForest Machine Learning.ipynb) (RandomForest)
 6. Technologies Selected:
 	- SQL database (https://www.heroku.com/postgres)
 	- Python (VS Code / Juypter Notebook)
