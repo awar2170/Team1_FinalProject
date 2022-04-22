@@ -3,7 +3,11 @@
 
 **Machine Learning Goal**: Create a model that will return a True/False value based on certain characteristics, i.e., mushroom in question is edible ("True") or poisonous ("False").
 
+<<<<<<< HEAD
 ## Team Member Names 
+=======
+## Team Member Names and Roles 
+>>>>>>> 34f7e40f16f8371e09fa43bd0148c25074f566d7
 - Beth Berry 
     - Segment 1: Mockup Database/Research Datasets
     - Segment 2: Objective: Presentation/Google Slides
@@ -27,12 +31,12 @@
 1. Decide on a topic for project: Mushroom Analysis
     - Select a question: Is the described mushroom edible or not, i.e. is it poisonous?
 2. Find preliminary datasets for your project: [link_to_Resources/mushroom_df_clean.csv](Resources/mushroom_df_clean.csv)
-3. Perform rudimentary EDA on the datasets that have been found: [link_to_ETL_.ipynb](ETL_.ipynb)
+3. Perform rudimentary EDA on the datasets that have been found: [link_to_ETL_.ipynb](https://github.com/awar2170/Team1_FinalProject/blob/main/ETL%20.ipynb)
 4. Create a mockup of the database: (Beth) ![image_is_here](static/images/Mushroom_data.PNG)
 5. Create a mockup of the machine learning model you are going to use: (Joshua and Julia)
 	- Testing both Tensorflow and RandomForest for best results
 		- [link_to_ML](machineLearning.ipynb) (Tensorflow)
-		- [link_to_RF](RandomForest Machine Learning.ipynb) (RandomForest)
+		- [link_to_RF](https://github.com/awar2170/Team1_FinalProject/blob/main/RandomForest%20Machine%20Learning%20.ipynb) (RandomForest)
 6. Technologies Selected:
 	- SQL database (https://www.heroku.com/postgres)
 	- Python (VS Code / Juypter Notebook)
