@@ -20,8 +20,6 @@
 - Alyssa Warnock 
     * Segment 1 Objective: EDA/Research Datasets
     * Segment 2 Objective: Machine Learing in Python/R 
-            - Make the linear regression model in R or Python
-            - Write up the machine learning aspect of it
 
 ## Segment 1 Deliverables
 1. Decide on a topic for project: Mushroom Analysis
@@ -40,18 +38,44 @@
 
 ## Segment 2 Deliverables 
 1. Presentation Draft     
-    * Selected topic
-    * Reason topic was selected
-    * Description of the source of data
-    * Questions the team hopes to answer with the data
-    * Description of the data exploration phase of the project
-    * Description of the analysis phase of the project
+    * Selected topic: Mushrooms
+    * Reason topic was selected: Team found great data for an analysis while researching data
+    * Description of the [source of data](https://github.com/ghattab/secondarydata):
+        - Copied from the source of the data's desscription: 
+
+        "Bookbased mushroom data set, describing physical characteristics, binary classification in poisonous or edible. Data Set Description Files are reported for two data sets: Primary and Secondary. The primary data set encodes the textbook mushroom entries, while the secondary data set is a pilot data, result of simulation." 
+
+    * Questions the team hopes to answer with the data:
+        1. If given characteristics of a mushroom, can we confidently predict whether or not that mushroom is poisonous? 
+        2. What characteristcs of a mushroom are best suited for prediction?
+
+    * Description of the data exploration phase of the project:
+        - 
+
+    * Description of the analysis phase of the project:
+        - 
 
 2. Machine Learning Model 
-    * Description of preliminary data preprocessing
+    * Description of [preliminary data preprocessing](https://github.com/awar2170/Team1_FinalProject/blob/main/ETL%20.ipynb)
+        1. We eliminated all null values from the primary and secondary dataset, including the placeholder "?" representing nulls in the dataset. 
+        2. We renamed the columns so that the secondary and primary datasets could be merged 
+        3. We dropped any columns that were not contained in both datasets to create a full combined dataframe
+            - [Primary Dataset](https://github.com/awar2170/Team1_FinalProject/blob/main/Resources/mushrooms_df_clean.csv)
+            - [Combined Dataset](https://github.com/awar2170/Team1_FinalProject/blob/main/Resources/mushrooms_combined_df_clean.csv)
+
     * Description of preliminary feature engineering and preliminary feature selection, including the decision-making process
+        - In order to decide which feature to use for the input of the machine learning model, we took multiple approaches and compared the results of each output: 
+            - RandomForest
+            - TensorFlow
+            - Correlation Analysis 
+            - XG_Boost
+        - After comparing the results of each, we concluded that XG_Boost was the most reliable machine learning model to use.  We will ask the user to input variables that are highly correlated to whether or not a mushroom is poisonous for prediction. 
+    
     * Description of how data was split into training and testing sets
+        - 
+    
     * Explanation of model choice, including limitations and benefits
+        - 
 
 3. Database Integration 
     * Database stores static data for use during the project
@@ -63,4 +87,7 @@
 4. Dashboard
     * Storyboard on a Google Slide(s)
     * Description of the tool(s) that will be used to create the final dashboard
+        - 
+
     * Description of interactive element(s)
+        - 
