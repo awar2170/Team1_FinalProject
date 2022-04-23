@@ -28,8 +28,8 @@
 4. Create a mockup of the database: (Beth) ![image_is_here](static/images/Mushroom_data.PNG =100x20)
 5. Create a mockup of the machine learning model you are going to use: (Joshua and Julia)
     * Testing both Tensorflow and RandomForest for best results
-	    - [link_to_ML](machineLearning.ipynb) (Tensorflow)
-	    - ![Link to Random Forest](https://github.com/awar2170/Team1_FinalProject/blob/main/RandomForest%20Machine%20Learning%20.ipynb)
+	    - [Link to Tensorflow Approach](machineLearning.ipynb)
+	    - [Link to Random Forest Approach](https://github.com/awar2170/Team1_FinalProject/blob/main/RandomForest%20Machine%20Learning%20.ipynb)
 6. Technologies Selected:
     * SQL database (https://www.heroku.com/postgres)
     * Python (VS Code / Juypter Notebook)
