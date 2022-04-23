@@ -3,3 +3,6 @@
 
 # Python
 __pycache__/
+
+# ignore db keys
+config.py

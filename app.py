@@ -1,5 +1,6 @@
 # import dependencies
 import json
+from config import username, db_pass
 
 # import SQLAlchemy dependency
 from sqlalchemy.ext.automap import automap_base
@@ -20,7 +21,7 @@ Base = automap_base()
 # create Flask instance
 app = Flask(__name__)
 app.template_folder = '.'
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/mushroom"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://"+username+":"+db_pass+"@localhost:5432/mushroom"
 db = SQLAlchemy(app)
 
 # create db instance
