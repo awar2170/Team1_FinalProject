@@ -1,0 +1,202 @@
+---
+title: "Regression Analysis"
+author: "Alyssa"
+date: "4/19/2022"
+output: html_document
+---
+
+```{r}
+library(readr)
+library(car)
+library(corrplot) #Install first if needed
+library(leaps) #Install first if needed
+library(tidyverse)
+library(reshape2)
+library(ggplot2)
+```
+ 
+```{r}
+mushroom_df <- read.csv("C:/Users/adeve/Desktop/BootMaterials/Bootcamp/20-Final-Project/Personal_Final_Project/mushroom_df.csv")
+
+encoded_df <- read.csv("C:/Users/adeve/Desktop/BootMaterials/Bootcamp/20-Final-Project/Personal_Final_Project/encoded_df.csv")
+```
+
+## Mushroom_df
+
+```{r}
+corr_simple <- function(data=df,sig=0.5){
+  #convert data to numeric in order to run correlations
+  #convert to factor first to keep the integrity of the data - each value will become a number rather than turn into NA
+  df_cor <- data %>% mutate_if(is.character, as.factor)
+  df_cor <- df_cor %>% mutate_if(is.factor, as.numeric)  #run a correlation and drop the insignificant ones
+  corr <- cor(df_cor)
+  #prepare to drop duplicates and correlations of 1     
+  corr[lower.tri(corr,diag=TRUE)] <- NA 
+  #drop perfect correlations
+  corr[corr == 1] <- NA   #turn into a 3-column table
+  corr <- as.data.frame(as.table(corr))
+  #remove the NA values from above 
+  corr <- na.omit(corr)   #select significant values  
+  corr <- subset(corr, abs(Freq) > sig) 
+  #sort by highest correlation
+  corr <- corr[order(-abs(corr$Freq)),]   #print table
+  print(corr)  #turn corr back into matrix in order to plot with corrplot
+  # mtx_corr <- reshape2::acast(corr, Var1~Var2, value.var="Freq")
+  
+  #plot correlations visually
+  # corrplot(mtx_corr, is.corr=FALSE, tl.col="black", na.label=" ")
+}
+```
+
+```{r}
+corr_df <- corr_simple(mushroom_df, sig=0.5)
+corr_graph = corr_df[corr_df$Var1== "Poisonous.or.Edible_p",]
+corr_graph
+```
+```{r}
+ggplot(corr_graph, aes(Var1, Var2, fill = Freq)) + geom_tile(color = "black") + scale_fill_gradient2(low ="red", mid = "white", high = "red")+ggtitle("Variables with a Correlation of 0.5 or Greater")
+```
+
+
+```{r}
+plot(jitter(mushroom_df$Poisonous.or.Edible_p, amount=0.2)~Bruises_f+Bruises_t+Odor_a+Odor_c+Odor_f+Odor_l+Odor_m+Odor_n+Odor_p+stalk.shape_e+stalk.shape_t+stalk.surface.above.ring_f+stalk.surface.above.ring_k+stalk.surface.above.ring_s+stalk.surface.above.ring_y+stalk.surface.below.ring_f+stalk.surface.below.ring_k+stalk.surface.below.ring_s+stalk.surface.below.ring_y+ring.number_n+ring.type_e+ring.type_l+ring.type_n+ring.type_p, data = mushroom_df)
+```
+
+```{r}
+# "Full" Model for high correlation variables 
+Full = lm(Poisonous.or.Edible_p~Bruises_f+Bruises_t+Odor_a+Odor_c+Odor_f+Odor_l+Odor_m+Odor_n+Odor_p+stalk.shape_e+stalk.shape_t+stalk.surface.above.ring_f+stalk.surface.above.ring_k+stalk.surface.above.ring_s+stalk.surface.above.ring_y+stalk.surface.below.ring_f+stalk.surface.below.ring_k+stalk.surface.below.ring_s+stalk.surface.below.ring_y+ring.number_n+ring.type_e+ring.type_l+ring.type_n+ring.type_p, data = mushroom_df)
+
+# Full model for the regression analysis 
+# Excluding Poisonous.or.Edible_e column 
+# Full = lm(Poisonous.or.Edible_p~Cap.Shape_b+Cap.Shape_c+Cap.Shape_f+Cap.Shape_k+Cap.Shape_s+Cap.Shape_x+Cap.Surface_f+Cap.Surface_g+Cap.Surface_s+Cap.Surface_y+Cap.Color_b+Cap.Color_c+Cap.Color_e+Cap.Color_g+Cap.Color_n+Cap.Color_p+Cap.Color_w+Cap.Color_y+Bruises_f+Bruises_t+Odor_a+Odor_c+Odor_f+Odor_l+Odor_m+Odor_n+Odor_p+Gill.attachment_a+Gill.attachment_f+gill.spacing_c+gill.spacing_w+Gill.size_b+Gill.size_n+Gill.color_g+Gill.color_h+Gill.color_k+Gill.color_n+Gill.color_p+Gill.color_r+Gill.color_u+Gill.color_w+Gill.color_y+stalk.shape_e+stalk.shape_t+stalk.root_b+stalk.root_c+stalk.root_e+stalk.root_r+stalk.surface.above.ring_f+stalk.surface.above.ring_k+stalk.surface.above.ring_s+stalk.surface.above.ring_y+stalk.surface.below.ring_f+stalk.surface.below.ring_k+stalk.surface.below.ring_s+stalk.surface.below.ring_y+stalk.color.above.ring_b+stalk.color.above.ring_c+stalk.color.above.ring_g+stalk.color.above.ring_n+stalk.color.above.ring_p+stalk.color.above.ring_w+stalk.color.above.ring_y+stalk.color.below.ring_b+stalk.color.below.ring_c+stalk.color.below.ring_g+stalk.color.below.ring_n+stalk.color.below.ring_p+stalk.color.below.ring_w+stalk.color.below.ring_y+veil.type_p+veil.color_w+veil.color_y+ring.number_n+ring.number_o+ring.number_t+ring.type_e+ring.type_l+ring.type_n+ring.type_p+spore.print.color_h+spore.print.color_k+spore.print.color_n+spore.print.color_r+spore.print.color_u+spore.print.color_w+population_a+population_c+population_n+population_s+population_v+population_y+habitat_d+habitat_g+habitat_l+habitat_m+habitat_p+habitat_u, data = mushroom_df)
+
+#MSE 
+MSE=(summary(Full)$sigma)^2
+```
+
+__Forward Selection__
+1. Start with the best single predictor
+2.  Is that predictor significant? 
+ 		Yes, then Include predictor in the model
+		No, then Don’t include predictor & stop 
+3. Find the “most significant” new predictor from among those NOT in the model. Return to step 2.
+
+- *Advantages:*
+		Uses smaller models early (parsimony)
+		Less susceptible to multicollinearity
+		Shows “most important” predictors
+
+- *Disadvantages:*
+		Need to consider more models
+		Predictor entered early may become 	redundant later 
+		
+- Continue until adding something is no longer useful 
+- Want to start with no predictors in the model 
+
+```{r}
+    # Start with a model with NO predictors
+none=lm(Poisonous.or.Edible_p~1,data=mushroom_df)
+
+   #Specify the direction
+forward_model = step(none,scope=list(upper=Full),scale=MSE, direction= "forward")# Full is the full model, you have to tell R what the end point is, it wouldn't have an end point if you didn't include that 
+
+# Shows you what will happen to the mallow cp if you add a certian predictor to it 
+# Computationally, it is a little heavy because it has a lot to look at 
+# Sometimes though, the first predictor isnt good once you reach the end
+
+summary(forward_model)
+```
+```{r}
+plot(forward_model)
+```
+
+
+
+__Stepwise Regression__
+- Basic idea: Alternate forward selection and backward elimination
+1. Use forward selection to choose a new predictor and check its significance.
+2. Use backward elimination to see if predictors already in the model can be dropped.
+
+- What would happen if you add or substract certain things and how would that impact eth mallow cp
+
+```{r}
+stepwise_model = step(none,scope=list(upper=Full),scale=MSE)
+# In this case we end up with the same case, but this isn't always the case 
+# you might end up with different things 
+summary(stepwise_model)
+```
+
+```{r}
+plot(stepwise_model)
+```
+
+# Using the Stepwise Logit function
+
+```{r}
+logit = function(B0, B1, x)
+  {
+    exp(B0+B1*x)/(1+exp(B0+B1*x))
+  }
+```
+
+```{r}
+stepwise_logit_mod <- glm(Poisonous.or.Edible_p ~ Odor_n + Odor_l + Odor_a + 
+    stalk.shape_e + Bruises_f + ring.type_e + Odor_p + stalk.surface.above.ring_y + 
+    stalk.surface.below.ring_y + Odor_m + stalk.surface.below.ring_k + 
+    Odor_f + stalk.surface.below.ring_f, family = binomial, data = mushroom_df)
+
+summary(stepwise_logit_mod)
+
+B0
+```
+```{r}
+# See summary of logistic mdoel 
+
+B0 = summary(stepwise_logit_mod)$coef[1] # Pull out intercept
+B1 = summary(stepwise_logit_mod)$coef[2] # Pull out slope Order_n
+B2 = summary(stepwise_logit_mod)$coef[3] # Pull out slope Odor_l
+B3 = summary(stepwise_logit_mod)$coef[4] # Pull out slope Odor_a
+B4 = summary(stepwise_logit_mod)$coef[5] # Pull out slope stalk.shape_e
+B5 = summary(stepwise_logit_mod)$coef[6] # Pull out slope Bruises_f
+B6 = summary(stepwise_logit_mod)$coef[7] # Pull out slope ring.type_e
+B7 = summary(stepwise_logit_mod)$coef[8] # Pull out slope Odor_p
+B8 = summary(stepwise_logit_mod)$coef[9] # Pull out slope stalk.surface.above.ring_y
+B9 = summary(stepwise_logit_mod)$coef[10] # Pull out slope stalk.surface.below.ring_k
+B10 = summary(stepwise_logit_mod)$coef[11] # Pull out slope Odor_m
+B11 = summary(stepwise_logit_mod)$coef[12] # Pull out slope stalk.surface.below.ring_k
+B12 = summary(stepwise_logit_mod)$coef[13] # Pull out slope Odor_f
+B13 = summary(stepwise_logit_mod)$coef[14] # Pull out slope stalk.surface.below.ring_f
+
+#Plot the GBMod data
+plot(jitter(Poisonous.or.Edible_p,amount=0.1)~ Odor_n+Odor_l+Odor_a+stalk.shape_e+Bruises_f+ring.type_e+Odor_p+stalk.surface.above.ring_y + stalk.surface.below.ring_y + Odor_m + stalk.surface.below.ring_k +Odor_f + stalk.surface.below.ring_f,data=mushroom_df)
+# Plot the GBMod
+curve(exp(B0+B1*x+B2*x+B3*x+B4*x+B5*x+B6*x+B7*x+B8*x+B9*x+B10*x+B11*x+B12*x+B13*x)/(1+exp(B0+B1*x+B2*x+B3*x+B4*x+B5*x+B6*x+B7*x+B8*x+B9*x+B10*x+B11*x+B12*x+B13*x)),add=TRUE, col="red")
+```
+
+```{r}
+x_1 = 1
+x_2 = 0
+x_3 = 1
+x_4 = 0
+x_5 = 0
+x_6 = 0
+x_7 = 0
+x_8 = 0
+x_9 = 0
+x_10 = 0
+x_11 = 0
+x_12 = 0
+x_13 = 0
+
+(exp(B0+B1*x_1+B2*x_2+B3*x_3+B4*x_4+B5*x_5+B6*x_6+B7*x_7+B8*x_8+B9*x_9+B10*x_10+B11*x_11+B12*x_12+B13*x_13)/(1+exp(B0+B1*x_1+B2*x_2+B3*x_3+B4*x_4+B5*x_5+B6*x_6+B7*x_7+B8*x_8+B9*x_9+B10*x_10+B11*x_11+B12*x_12+B13*x_13)))
+```
+
+
+
+
+
+
+
+
+
+
