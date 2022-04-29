@@ -123,8 +123,6 @@ def qmushrooms():
 @app.route('/predict', methods=['POST'])
 def prediction():
     req = request.get_json()
-    #res = jsonify(req)
-    #runML(req) # function pass to another .py
     return jsonify(runML(req))
 
 

@@ -92,9 +92,9 @@ function MLPredict(data) {
     divCount.innerHTML = "&nbsp;Query Results: " + rcount;
 
     // temporary
-    const divContent = document.getElementById("content");
-    divContent.innerHTML = "";
-    divContent.innerHTML = result_dict;
+    //const divContent = document.getElementById("content");
+    //divContent.innerHTML = "";
+    //divContent.innerHTML = result_dict;
 };
 
 
