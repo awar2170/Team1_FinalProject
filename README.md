@@ -25,7 +25,7 @@
     * Select a question: Is the described mushroom edible or not, i.e. is it poisonous?
 2. Find preliminary datasets for your project: [link_to_mushroom_df_clean.csv](Resources/mushroom_df_clean.csv)
 3. Perform rudimentary EDA on the datasets that have been found: [link_to_ETL_.ipynb](ETL%20.ipynb)
-4. Create a mockup of the database: (Beth) <img src="static/images/Mushroom_data.PNG" width="327" />
+4. Create a mockup of the database: (Beth) <img src="static/images/Mushroom_data.PNG" width="490" />
 5. Create a mockup of the machine learning model you are going to use: (Joshua and Julia)
     * Testing both Tensorflow and RandomForest for best results
 	    - [Link to Tensorflow Approach](Archive/machineLearning.ipynb)
