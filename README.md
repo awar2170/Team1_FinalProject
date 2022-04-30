@@ -25,15 +25,15 @@
     * Select a question: Is the described mushroom edible or not, i.e. is it poisonous?
 2. Find preliminary datasets for your project: [link_to_mushroom_df_clean.csv](Resources/mushroom_df_clean.csv)
 3. Perform rudimentary EDA on the datasets that have been found: [link_to_ETL_.ipynb](ETL%20.ipynb)
-4. Create a mockup of the database: (Beth) ![image_is_here](static/images/Mushroom_data.PNG =100x20)
+4. Create a mockup of the database: (Beth) <img src="static/images/Mushroom_data.PNG" width="327" />
 5. Create a mockup of the machine learning model you are going to use: (Joshua and Julia)
     * Testing both Tensorflow and RandomForest for best results
-	    - [Link to Tensorflow Approach](machineLearning.ipynb)
-	    - [Link to Random Forest Approach](https://github.com/awar2170/Team1_FinalProject/blob/main/RandomForest%20Machine%20Learning%20.ipynb)
+	    - [Link to Tensorflow Approach](Archive/machineLearning.ipynb)
+	    - [Link to Random Forest Approach](Archive/RandomForest%20Machine%20Learning%20.ipynb)
 6. Technologies Selected:
-    * SQL database (https://www.heroku.com/postgres)
+    * SQL database (local: postgres.sql)
     * Python (VS Code / Juypter Notebook)
-    * Website (https://pages.github.com/)
+    * Website (FLASK)
 
 ## Segment 2 Deliverables 
 1. Presentation Draft     
@@ -93,7 +93,7 @@
     * Includes at least one connection string (using SQLAlchemy or PyMongo)
 
 4. Dashboard
-    * Storyboard on a Google Slide(s)
+    * Storyboard on a Google Slide(s) [Google_Slides](https://docs.google.com/presentation/d/12lNlyuxWgLuAV3Top4ni89GIcjQz9xi5oPzYISy7Gzc/edit?usp=sharing)
     * Description of the tool(s) that will be used to create the final dashboard
         - Website technologies: Flask, SQLAlchemy (via Python)
         - Web pages: HTML, CSS, Javascript
