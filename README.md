@@ -5,38 +5,41 @@
 
 ## Team Member Names and Roles
 - Beth Berry 
-    * Segment 1: Mockup Database/Research Datasets
-    * Segment 2: Objective: Presentation/Google Slides
+    * Segment 1 Objective: Mockup Database/Research Datasets
+    * Segment 2 Objective: Presentation/Google Slides
+    * Segment 3 Objective: Data Visualization/Presentation
 - Julia Harvey
     * Segment 1 Objective: Machine Learning Model Mockup//Research Datasets
     * Segment 2 Objective: Machine Learning Model in Python 
+    * Segment 3 Objective: Data Visualizations/Descriptions Writer
 - Joshua Fait
     * Segment 1 Objective: Machine Learning Model Mockup/Research Datasets
-    * Segment 2 Objective: Database creation and integration
+    * Segment 2 Objective: Database Creation and Integration
+    * Segment 3 Objective: Finalizing Machine Learning Model/Website
 - Drew Trefsgar
     * Segment 1 Objective: EDA/Research Datasets
     * Segment 2 Objective: Machine Learning in Python/R/Review Google Slides
+    * Segment 3 Objective: Presentation Editor
 - Alyssa Warnock 
     * Segment 1 Objective: EDA/Research Datasets
-    * Segment 2 Objective: Machine Learing in Python/R 
+    * Segment 2 Objective: Machine Learing in Python/R/Tableau Visualizations 
+    * Segment 3 Objective: Plotly/Data Visualizations
 
-## Segment 1 Deliverables
-1. Decide on a topic for project: Mushroom Analysis
-    * Select a question: Is the described mushroom edible or not, i.e. is it poisonous?
-2. Find preliminary datasets for your project: [link_to_mushroom_df_clean.csv](Resources/mushroom_df_clean.csv)
-3. Perform rudimentary EDA on the datasets that have been found: [link_to_ETL_.ipynb](ETL%20.ipynb)
-4. Create a mockup of the database: (Beth)<br/> <img src="static/images/Mushroom_data.PNG" width="490" style="border:3px solid black" />
-5. Create a mockup of the machine learning model you are going to use: (Joshua and Julia)
-    * Testing both Tensorflow and RandomForest for best results
-	    - [Link to Tensorflow Approach](Archive/machineLearning.ipynb)
-	    - [Link to Random Forest Approach](Archive/RandomForest%20Machine%20Learning%20.ipynb)
-6. Technologies Selected:
-    * SQL database (local: postgres.sql)
-    * Python (VS Code / Juypter Notebook)
-    * Website (FLASK)
+## Segment 3 Deliverables
+1. Presentation 
+2. GitHub Respository
+3. Machine Learning Model
+    - Most code necessary to complete the machine learning portion of the project is on the repo
+4. Dashboard
+    - Upload images from the initial analysis to the readme 
+    - Upload images or reports from the machine learning task 
+5. Miscellaneous 
+    - Connect Tableau plots to the website
+    - Create Plotly Plots (and connect to the website)
+    - Website formatting
 
-## Segment 2 Deliverables 
-1. Presentation Draft     
+## Segment 3 Rubric 
+1. Presentation
     * Selected topic: Mushrooms
     * Reason topic was selected: Team found great data for an analysis while researching data
     * Description of the [source of data](https://github.com/ghattab/secondarydata):
@@ -54,8 +57,28 @@
     * Description of the analysis phase of the project:
         - We planned out multiple machine learning approaches (detailed in the machine learning section below) and created a correlation plot to see which data was correlated with the variable we wanted to predict.
 
-2. Machine Learning Model 
-    * Description of [preliminary data preprocessing](https://github.com/awar2170/Team1_FinalProject/blob/main/ETL%20.ipynb)
+    * Technologies, languages, tools, and algorithms used throughout the project:
+        - SQL database (local: postgres.sql)
+        - Python (VS Code / Juypter Notebook)
+        - Website (FLASK)
+
+    * Slides: Presentation is drafted in [Google Slides](https://docs.google.com/presentation/d/12lNlyuxWgLuAV3Top4ni89GIcjQz9xi5oPzYISy7Gzc/edit?usp=sharing)
+
+2. GitHub Repository
+    - Main Branch
+        - All code in the main branch is production-ready.
+        - All code necessary to perform exploratory analysis
+        - Most code necessary to complete the machine learning portion of the project
+    - README.md
+        - Description of the communication protocols has been removed
+        - Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
+        - [Link to Google Slides draft presentation](https://docs.google.com/presentation/d/12lNlyuxWgLuAV3Top4ni89GIcjQz9xi5oPzYISy7Gzc/edit?usp=sharing)
+    - Requirements for the individual branches follow:
+        - At least one branch for each team member
+        - Each team member has at least four commits for the duration of the third segment (12 total commits per person)
+
+3. Machine Learning Model
+    * Description of [data preprocessing](https://github.com/awar2170/Team1_FinalProject/blob/main/ETL%20.ipynb)
         - First, we eliminated all null values from the primary and secondary dataset, including the placeholder "?" representing nulls in the dataset. 
         - Second, we renamed the columns so that the secondary and primary datasets could be merged 
         - Lastly, we dropped any columns that were not contained in both datasets to create a full combined dataframe
@@ -84,21 +107,20 @@
             - Sensitive to outliers 
             - Susceptible to Overfitting
             - Black-Box Nature is not always straightforward in explaining what is happening in the background
+    
+    * Description of how they have trained the model thus far, and any additional training that will take place
+        - We are encoding it with OneHotEncoder and train.test.split from sklearn
+        - No additional training will take place 
 
-3. Database Integration 
-    * Database stores static data for use during the project
-    * Database interfaces with the project in some format (e.g., scraping updates the database)
-    * Includes at least two tables (or collections, if using MongoDB)
-    * Includes at least one join using the database language (not including any joins in Pandas)
-    * Includes at least one connection string (using SQLAlchemy or PyMongo)
+    * Description of current accuracy score
+        - The accuracy score is 1.0, this is most likely due to the data being academic and created specifically for machine learning purposes
 
-4. Dashboard
-    * Storyboard on a Google Slide(s) [Google_Slides](https://docs.google.com/presentation/d/12lNlyuxWgLuAV3Top4ni89GIcjQz9xi5oPzYISy7Gzc/edit?usp=sharing)
-    * Description of the tool(s) that will be used to create the final dashboard
-        - Website technologies: Flask, SQLAlchemy (via Python)
-        - Web pages: HTML, CSS, Javascript
-        - Database: Postgres SQL
-
-    * Description of interactive element(s)
+4. Dashboard (30 points)
+    - Images from the initial analysis 
+        - from Tableau Dashboard (on the Website)
+    - Data (images or report) from the machine learning task
+        - Link to jupyter notebook file (on README)
+        - Reference the jupyter notebook machine learning code (on the Website)
+    - At least one interactive element:
         - Dropdown menus for user to select the characteristics of their specific mushroom. 
         - An interactive "Predict" button 
