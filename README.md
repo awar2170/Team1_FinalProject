@@ -7,23 +7,23 @@
 - Beth Berry 
     * Segment 1 Objective: Mockup Database/Research Datasets
     * Segment 2 Objective: Presentation/Google Slides
-    * Segment 3 Objective: 
+    * Segment 3 Objective: Data Visualization/Presentation
 - Julia Harvey
     * Segment 1 Objective: Machine Learning Model Mockup//Research Datasets
     * Segment 2 Objective: Machine Learning Model in Python 
-    * Segment 3 Objective:
+    * Segment 3 Objective: Data Visualizations/Descriptions Writer
 - Joshua Fait
     * Segment 1 Objective: Machine Learning Model Mockup/Research Datasets
     * Segment 2 Objective: Database Creation and Integration
-    * Segment 3 Objective:
+    * Segment 3 Objective: Finalizing Machine Learning Model/Website
 - Drew Trefsgar
     * Segment 1 Objective: EDA/Research Datasets
     * Segment 2 Objective: Machine Learning in Python/R/Review Google Slides
-    * Segment 3 Objective:
+    * Segment 3 Objective: Presentation Editor
 - Alyssa Warnock 
     * Segment 1 Objective: EDA/Research Datasets
     * Segment 2 Objective: Machine Learing in Python/R/Tableau Visualizations 
-    * Segment 3 Objective:
+    * Segment 3 Objective: Plotly/Data Visualizations
 
 ## Segment 3 Deliverables
 1. Presentation 
@@ -34,7 +34,7 @@
     - Upload images from the initial analysis to the readme 
     - Upload images or reports from the machine learning task 
 5. Miscellaneous 
-    - Connect Tableau plots to the website 
+    - Connect Tableau plots to the website
     - Create Plotly Plots (and connect to the website)
     - Website formatting
 
@@ -109,11 +109,18 @@
             - Black-Box Nature is not always straightforward in explaining what is happening in the background
     
     * Description of how they have trained the model thus far, and any additional training that will take place
+        - We are encoding it with OneHotEncoder and train.test.split from sklearn
+        - No additional training will take place 
+
     * Description of current accuracy score
+        - The accuracy score is 1.0, this is most likely due to the data being academic and created specifically for machine learning purposes
 
 4. Dashboard (30 points)
-    - Images from the initial analysis
+    - Images from the initial analysis 
+        - from Tableau Dashboard (on the Website)
     - Data (images or report) from the machine learning task
+        - Link to jupyter notebook file (on README)
+        - Reference the jupyter notebook machine learning code (on the Website)
     - At least one interactive element:
         - Dropdown menus for user to select the characteristics of their specific mushroom. 
         - An interactive "Predict" button 
