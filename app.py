@@ -1,6 +1,6 @@
 # import dependencies
 import json
-from config import username, db_pass
+from config import username, db_pass, db_name
 
 # import SQLAlchemy dependency
 from sqlalchemy.ext.automap import automap_base
@@ -21,7 +21,7 @@ Base = automap_base()
 # create Flask instance
 app = Flask(__name__)
 app.template_folder = '.'
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://"+username+":"+db_pass+"@localhost:5432/mushroom"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://"+username+":"+db_pass+"@localhost:5432/"+db_name
 db = SQLAlchemy(app)
 
 # create db instance
@@ -122,7 +122,8 @@ def qmushrooms():
 # define machine learning route
 @app.route('/predict', methods=['POST'])
 def prediction():
-    req = request.get_json()
+    #req = request.get_json()
+    req = request.json
     return jsonify(runML(req))
 
 

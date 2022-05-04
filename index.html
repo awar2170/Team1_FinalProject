@@ -38,30 +38,30 @@
             <!-- Left Column-->
             <div class="col-3">
                 <div class="form-floating">
-                    <select id="bruises" class="form-select form-select-sm" aria-label="bruises">
+                    <select id="Bruises" class="form-select form-select-sm" aria-label="bruises">
                         <option value="*" selected>&nbsp;Select Bruising</option>
                         <option value="t">&nbsp;yes</option>
                         <option value="f">&nbsp;no</option>
                     </select>
-                    <label for="bruises">Bruises</label>
+                    <label for="Bruises">Bruises</label>
                 </div>
 
                 <br />
 
                 <div class="form-floating">
-                    <select id="odor" class="form-select form-select-sm" aria-label="odor">
+                    <select id="Odor" class="form-select form-select-sm" aria-label="odor">
                         <option value="*" selected>&nbsp;Select Odor</option>
                         <option value="a">&nbsp;almond</option>
                         <option value="l">&nbsp;anise</option>
                         <option value="c">&nbsp;creosote</option>
-                        <option value="y">&nbsp;fishy</option>
+                        <!--<option value="y">&nbsp;fishy</option>-->
                         <option value="f">&nbsp;foul</option>
                         <option value="m">&nbsp;musty</option>
                         <option value="n">&nbsp;none</option>
                         <option value="p">&nbsp;pungent</option>
-                        <option value="s">&nbsp;spicy</option>
+                        <!--<option value="s">&nbsp;spicy</option>-->
                     </select>
-                    <label for="odor">Odor</label>
+                    <label for="Odor">Odor</label>
                 </div>
 
                 <br />
@@ -80,34 +80,35 @@
                 <div class="form-floating">
                     <select id="ring_type" class="form-select form-select-sm" aria-label="ring type">
                         <option value="*" selected>&nbsp;Select Ring Type</option>
-                        <option value="c">&nbsp;cobwebby</option>
+                        <!--<option value="c">&nbsp;cobwebby</option>-->
                         <option value="e">&nbsp;evanescent</option>
-                        <option value="f">&nbsp;flaring</option>
+                        <!--<option value="f">&nbsp;flaring</option>-->
                         <option value="l">&nbsp;large</option>
                         <option value="n">&nbsp;none</option>
                         <option value="p">&nbsp;pendant</option>
-                        <option value="s">&nbsp;sheathing</option>
-                        <option value="z">&nbsp;zone</option>
+                        <!--<option value="s">&nbsp;sheathing</option>-->
+                        <!--<option value="z">&nbsp;zone</option>-->
                     </select>
                     <label for="ring_type">Ring Type</label>
                 </div>
 
                 <br />
 
+                <!--
                 <div>
                     <p id="rdisplay"></p>
                 </div>
+                -->
                 <div id="ML-submit">
-                    <!--<form action="" method="POST">-->
                         <button type="submit" class="ML-button" id="ML-button" name="ML-button" disabled onclick="sendData()">Predict</button>
-                    <!--</form>-->
                 </div>
             </div>
 
             <!-- Right Column -->
             <div class="col-9">
                 <!-- display prediction results -->
-                <p id="content" style="font-size: 9pt;"></p>
+                <p id="content">
+                </p>
             </div>
         </div>
     </div>
@@ -122,5 +123,6 @@
     <script>
         d3.selectAll("select").on("change", updateFilters);
     </script>
+
 </body>
 </html>
