@@ -124,7 +124,7 @@
             - [Random Forest](https://github.com/awar2170/Team1_FinalProject/blob/main/Archive/RandomForest%20Machine%20Learning%20.ipynb) 
             - [XG_Boost](https://github.com/awar2170/Team1_FinalProject/blob/main/Archive/XG_Boost_trial_mushrooms.ipynb)
             - [Machine Learning](https://github.com/awar2170/Team1_FinalProject/blob/main/Archive/machineLearning.ipynb)
-        - [Machine Learning Code Photo](URL)
+        - [Machine Learning Code Photo](https://github.com/awar2170/Team1_FinalProject/blob/Segment_3_README_Final/static/images/ML-tensorflow.png)
     - At least one interactive element:
         - Dropdown menus for user to select the characteristics of their specific mushroom. 
         - An interactive "Predict" button 
