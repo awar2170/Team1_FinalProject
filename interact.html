@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Prevent favicon request -->
+    <link rel="icon" href="data:,">
+
+    <!-- Bootstrap CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootswatch Simplex -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+
+    <!-- Site CSS-->
+    <link href="/static/css/styles.css" rel="stylesheet">
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Site JS -->
+    <script type="text/javascript" src="/static/js/app.js"></script>
+
+    <!-- Page Title -->
+    <title>UNC Bootcamp | Team 1 | Mushroom Classification</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="banner">
+          <h1 class="display-4">Mushrooms</h1>
+          <p class="lead">Classification of mushroom types as poisonous or edible</p>
+      </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('home') }}">Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('interact') }}">Predictor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('history') }}">History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link 4</a>
+              </li>
+            </ul>
+        </div>
+      </nav>  
+
+    <!-- Content-->
+    <div class="container">
+        <div class="row align-items-start">
+            <!-- Left Column-->
+            <div class="col-2">
+                <div class="sel-text">
+                    <p>Select a value for each of the key features of your mushroom, and click 'Predict'.</p>
+                </div>
+                <div class="form-floating">
+                    <select id="Bruises" class="form-select form-select-sm" aria-label="bruises">
+                        <option value="*" selected>&nbsp;Select Bruising</option>
+                        <option value="t">&nbsp;yes</option>
+                        <option value="f">&nbsp;no</option>
+                    </select>
+                    <label for="Bruises">Bruises</label>
+                </div>
+
+                <br />
+
+                <div class="form-floating">
+                    <select id="Odor" class="form-select form-select-sm" aria-label="odor">
+                        <option value="*" selected>&nbsp;Select Odor</option>
+                        <option value="a">&nbsp;almond</option>
+                        <option value="l">&nbsp;anise</option>
+                        <option value="c">&nbsp;creosote</option>
+                        <!--<option value="y">&nbsp;fishy</option>-->
+                        <option value="f">&nbsp;foul</option>
+                        <option value="m">&nbsp;musty</option>
+                        <option value="n">&nbsp;none</option>
+                        <option value="p">&nbsp;pungent</option>
+                        <!--<option value="s">&nbsp;spicy</option>-->
+                    </select>
+                    <label for="Odor">Odor</label>
+                </div>
+
+                <br />
+
+                <div class="form-floating">
+                    <select id="stalk_shape" class="form-select form-select-sm" aria-label="stalk shape">
+                        <option value="*" selected>&nbsp;Select Stalk Shape</option>
+                        <option value="e">&nbsp;enlarging</option>
+                        <option value="t">&nbsp;tapering</option>
+                    </select>
+                    <label for="stalk_shape">Stalk Shape</label>
+                </div>
+
+                <br />
+
+                <div class="form-floating">
+                    <select id="ring_type" class="form-select form-select-sm" aria-label="ring type">
+                        <option value="*" selected>&nbsp;Select Ring Type</option>
+                        <!--<option value="c">&nbsp;cobwebby</option>-->
+                        <option value="e">&nbsp;evanescent</option>
+                        <!--<option value="f">&nbsp;flaring</option>-->
+                        <option value="l">&nbsp;large</option>
+                        <option value="n">&nbsp;none</option>
+                        <option value="p">&nbsp;pendant</option>
+                        <!--<option value="s">&nbsp;sheathing</option>-->
+                        <!--<option value="z">&nbsp;zone</option>-->
+                    </select>
+                    <label for="ring_type">Ring Type</label>
+                </div>
+
+                <br />
+
+                <div id="ML-submit">
+                        <button type="submit" class="btn btn-dark" id="ML-button" name="ML-button" disabled onclick="sendData()">Predict</button>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-10">
+                <!-- display prediction results -->
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est.</p>
+                <p>Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem.</p>
+                
+                <p id=content></p>
+            </div>
+        </div>
+        <br/><br/><br/><br/>
+    </div>
+
+    <footer>
+        <section class="footer mt-auto py-3 bg-light">
+            <div class="container">
+                <span class="text-muted">&nbsp; Beth Berry | Josh Fait | Julia Harvey | Drew Trefsgar | Alyssa Warnock &nbsp;</span>
+            </div>
+        </section>
+    </footer>
+
+    <!-- JS Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Listen for selection changes -->
+    <script>
+        d3.selectAll("select").on("change", updateFilters);
+    </script>
+
+</body>
+</html>

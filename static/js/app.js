@@ -37,8 +37,8 @@ function updateFilters() {
     // fetch filtered data for prediction
     // Used to filter full database
     // fetch("/mushrooms")
-    //     .then(res => res.json())
-    //     .then(data => MLPredict(data))
+    // .then(res => res.json())
+    // .then(data => MLPredict(data))
 
     // Pass values to predict function
     MLPredict(fvalues)
@@ -107,7 +107,7 @@ function sendData() {
             //.then(data => console.log("fetch: " + Object.values(data)))
             .then(data => {
                 predictText = Object.values(data);
-                console.log("predictText: " + predictText);
+                //console.log("predictText: " + predictText);
                 displayResults();
             });
 }

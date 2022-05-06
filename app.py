@@ -86,6 +86,16 @@ class mushroom(db.Model):
 def home():
     return render_template("index.html")
 
+# define interaction page route
+@app.route('/interact')
+def interact():
+    return render_template("interact.html")
+
+# define interaction page route
+@app.route('/history')
+def history():
+    return render_template("history.html")
+
 # define db entries route
 @app.route('/mushrooms', methods=['GET'])
 def qmushrooms():
