@@ -25,7 +25,7 @@ function myPlot(data) {
     // console.log(pie_data)
     
     const pie_layout = {
-        title: "'Pie' Chart",
+        title: "Poisonous vs Edible Distribution in the Mushroom Data",
     };
     
     // console.log(pie_layout)
