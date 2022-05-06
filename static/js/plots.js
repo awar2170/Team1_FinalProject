@@ -5,22 +5,31 @@ fetch("/mushrooms")
 
 function myPlot(data) {
     let mushroom_data = data;
-    console.log(mushroom_data);
-}
+    const total_mushrooms = Object.keys(mushroom_data).length;
+    // const poison_mushrooms = Object.keys(mushroom_data === 'p').length;
+    let counter_poison = 0;
+    for (let i = 0; i<mushroom_data.length;i++) {
+        if (mushroom_data[i].poisonous_or_edible === 'p') counter_poison++;
+    }
+    let counter_edible = 0;
+    for (let i = 0; i<mushroom_data.length;i++) {
+        if (mushroom_data[i].poisonous_or_edible === 'e') counter_edible++;
+    }
 
-const pie_data = [{
-    labels: ["nonalcoholic beer", "nonalcoholic wine",      "nonalcoholic martini", "nonalcoholic margarita",
-"ice tea", "nonalcoholic rum & coke", "nonalcoholic mai tai", "nonalcoholic gin & tonic"],
-    values: [22.7, 17.1, 9.9, 8.7, 7.2, 6.1, 6.0, 4.6],
-    type: 'pie'
-}];
+    const pie_data = [{
+        labels: ["Edible", "Poisonous"],
+        values: [counter_edible, counter_poison],
+        type: 'pie'
+    }];
+    
+    // console.log(pie_data)
+    
+    const pie_layout = {
+        title: "'Pie' Chart",
+    };
+    
+    // console.log(pie_layout)
+    
+    return Plotly.newPlot("pie", pie_data, pie_layout)
+    }
 
-console.log(pie_data)
-
-const pie_layout = {
-    title: "'Pie' Chart",
-};
-
-console.log(pie_layout)
-
-Plotly.newPlot("pie", pie_data, pie_layout)
