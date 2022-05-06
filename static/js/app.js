@@ -174,3 +174,6 @@ function displayResults() {
 //     //divContent.innerHTML = "";
 //     //divContent.innerHTML = result_dict;
 // };
+
+const test = fetch("/mushrooms").then(res => res.json())
+console.log(test)

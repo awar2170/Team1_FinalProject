@@ -17,9 +17,13 @@
 
     <!-- D3 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!-- Site JS -->
     <script type="text/javascript" src="/static/js/app.js"></script>
+    <script type="text/javascript" src="/static/js/plots.js" defer></script>
 
     <!-- Page Title -->
     <title>UNC Bootcamp | Team 1 | Mushroom Classification</title>
@@ -68,7 +72,9 @@
                 <p>Integer ultrices lobortis eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin semper, ante vitae sollicitudin posuere, metus quam iaculis nibh, vitae scelerisque nunc massa eget pede. Sed velit urna, interdum vel, ultricies vel, faucibus at, quam. Donec elit est, consectetuer eget, consequat quis, tempus quis, wisi.</p>
                 <p>In in nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Donec ullamcorper fringilla eros. Fusce in sapien eu purus dapibus commodo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                 <p>Cras faucibus condimentum odio. Sed ac ligula. Aliquam at eros. Etiam at ligula et tellus ullamcorper ultrices. In fermentum, lorem non cursus porttitor, diam urna accumsan lacus, sed interdum wisi nibh nec nisl.</p>
-            </div>
+                <div id="pie"></div>
+                <p>Above is a pie chart representing the distribution of poisonous vs edible mushrooms in our dataset.</p>
+              </div>
         </div>
         <br/><br/><br/><br/>
     </div>
@@ -88,4 +94,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </body>
+
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 </html>
