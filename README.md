@@ -119,8 +119,12 @@
     - Images from the initial analysis 
         - from [Tableau Dashboard](https://public.tableau.com/app/profile/alyssa.warnock/viz/FinalProject1_16511895101350/TheDistributionofPoisonousvsEdibleonStalkColorBelowSurfaceinMushrooms?publish=yes)
     - Data (images or report) from the machine learning task
-        - Link to [jupyter notebook file](https://github.com/awar2170/Team1_FinalProject/blob/main/ml.py)
-        - Reference the jupyter notebook machine learning code (on the Website)
+        - Link to current [jupyter notebook file](https://github.com/awar2170/Team1_FinalProject/blob/main/ml.py)
+        - The previous analysis are in the Archive folder
+            - [Random Forest](https://github.com/awar2170/Team1_FinalProject/blob/main/Archive/RandomForest%20Machine%20Learning%20.ipynb) 
+            - [XG_Boost](https://github.com/awar2170/Team1_FinalProject/blob/main/Archive/XG_Boost_trial_mushrooms.ipynb)
+            - [Machine Learning](https://github.com/awar2170/Team1_FinalProject/blob/main/Archive/machineLearning.ipynb)
+        - [Machine Learning Code Photo](URL)
     - At least one interactive element:
         - Dropdown menus for user to select the characteristics of their specific mushroom. 
         - An interactive "Predict" button 
