@@ -25,7 +25,11 @@ function myPlot(data) {
     // console.log(pie_data)
     
     const pie_layout = {
-        title: "Poisonous vs Edible Distribution in the Mushroom Data",
+        title: { text: "Poisonous vs Edible Distribution in the Mushroom Data", font: { size: 12 } },
+        autosize: false,
+        height: 400,
+        width: 400,
+        paper_bgcolor: "rgb(230,230,230)"
     };
     
     // console.log(pie_layout)

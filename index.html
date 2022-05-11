@@ -26,7 +26,7 @@
     <script type="text/javascript" src="/static/js/plots.js" defer></script>
 
     <!-- Page Title -->
-    <title>UNC Bootcamp | Team 1 | Mushroom Classification</title>
+    <title>Mushroom Classification | Team 1 | UNC Bootcamp - Nov 21</title>
 </head>
 <body>
     <!-- Header -->
@@ -50,8 +50,8 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('history') }}">History</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link 4</a>
+            <li>
+              <a class="nav-link" href="https://docs.google.com/presentation/d/1sI6gqZy0YT5qKFDDn4DUgEhXgPRAEeRMMw7VchDkVEM/" target="_blank">Presentation</a>
             </li>
           </ul>
       </div>
@@ -62,19 +62,115 @@
         <div class="row align-items-start">
             <!-- All Column -->
             <div class="col-12">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est.</p>
-                <p>Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem.</p>
-                <p>In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</p>
-                <p>Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula. Donec hendrerit, felis et imperdiet euismod, purus ipsum pretium metus, in lacinia nulla nisl eget sapien.</p>
-                <p>Donec ut est in lectus consequat consequat. Etiam eget dui. Aliquam erat volutpat. Sed at lorem in nunc porta tristique. Proin nec augue.</p>
-                <p>Quisque aliquam tempor magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc ac magna. Maecenas odio dolor, vulputate vel, auctor ac, accumsan id, felis. Pellentesque cursus sagittis felis.</p>
-                <p>Pellentesque porttitor, velit lacinia egestas auctor, diam eros tempus arcu, nec vulputate augue magna vel risus. Cras non magna vel ante adipiscing rhoncus. Vivamus a mi. Morbi neque. Aliquam erat volutpat.</p>
-                <p>Integer ultrices lobortis eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin semper, ante vitae sollicitudin posuere, metus quam iaculis nibh, vitae scelerisque nunc massa eget pede. Sed velit urna, interdum vel, ultricies vel, faucibus at, quam. Donec elit est, consectetuer eget, consequat quis, tempus quis, wisi.</p>
-                <p>In in nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Donec ullamcorper fringilla eros. Fusce in sapien eu purus dapibus commodo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <p>Cras faucibus condimentum odio. Sed ac ligula. Aliquam at eros. Etiam at ligula et tellus ullamcorper ultrices. In fermentum, lorem non cursus porttitor, diam urna accumsan lacus, sed interdum wisi nibh nec nisl.</p>
-                <div id="pie"></div>
-                <p>Above is a pie chart representing the distribution of poisonous vs edible mushrooms in our dataset.</p>
+
+              <!-- Content heading -->
+              <div id="leadInfo">
+                <div id="leadText" class="lead-child">
+                  <h1 style="color: rgb(40, 80, 0)">To eat or not to eat...</h1>
+                    <p>The purpose of our project is to use machine learning to determine whether a 
+                    mushroom is poisonous or edible based on features provided by the user. 
+                    <!--It also answers the question: What are the main features of an edible 
+                    mushroom?--></p>
+
+                    <p>Our dataset was sourced from the Audubon Society who have extensive records of 
+                    mushroom features that correlate to the toxicity of different species. 
+                    We chose this topic because of the accuracy of the dataset and to provide a tool 
+                    to promote health and safety.</p>
+                </div>
+                <div id="leadImg" class="lead-child">
+                  <img src="/static/images/qmark.png" height="264">
+                </div>
               </div>
+
+              <div class="clear"><br/></div>
+
+              <!-- Tableau integration -->
+              <div id="tableau">
+                <div id="tableau-chart" class="tableau-child">
+                  <div class='tableauPlaceholder' id='viz1651860966357' style='position: relative'>
+                    <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;FinalProject1_16511895101350&#47;TheDistributionofPoisonousvsEdibleonBruisesinMushrooms&#47;1_rss.png' style='border: none' /></a></noscript>
+                    <object class='tableauViz' style='display:none;'>
+                      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                      <param name='embed_code_version' value='3' />
+                      <param name='site_root' value='' />
+                      <param name='name' value='FinalProject1_16511895101350&#47;TheDistributionofPoisonousvsEdibleonBruisesinMushrooms' />
+                      <param name='tabs' value='yes' />
+                      <param name='toolbar' value='yes' />
+                      <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;FinalProject1_16511895101350&#47;TheDistributionofPoisonousvsEdibleonBruisesinMushrooms&#47;1.png' />
+                      <param name='animate_transition' value='yes' />
+                      <param name='display_static_image' value='yes' />
+                      <param name='display_spinner' value='yes' />
+                      <param name='display_overlay' value='yes' />
+                      <param name='display_count' value='yes' />
+                      <param name='language' value='en-US' />
+                      <param name='filter' value='publish=yes' /></object>
+                  </div>
+
+                  <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1651860966357');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                  </script>
+                </div>
+                <div id="tableau-text" class="tableau-child">
+                  <h5>Data Story</h5>
+                  <p>This Tableau storyboard shows the distribution of poisonous and edible mushrooms 
+                    based on 6 different key features. Each predictor is color coded blue for 
+                    "Edible" and orange for "Poisonous."</p>
+                  <p>Our analysis of the data shows these features to have the largest impact 
+                    on whether or not a mushroom is edible 
+                    <span style="font-size: 9pt;">(image: <a href="static/images/Correlation_point_5.png" target="_blank">Correlation of .5 or higher</a>)</span>.</p>
+                  <p>Based on our analysis of the data, we found that mushrooms with bruises, a tapering 
+                    stalk shape, and evanescent ring types are more likely to be poisonous. While 
+                    mushrooms with an enlarging stalk shape and large ring types are more likely to be 
+                    edible.</p>
+                  <p>Our odor analysis showed that mushrooms that smell creosote, fishy, musty, and 
+                    pungent are more likely to be poisonous while mushrooms that smell like almond and 
+                    anise are more likely to be edible. Mushrooms that have no smell are more likely 
+                    to be edible, but have the possibility of being poisonous.</p>
+                  <p>Lastly, when looking at the ring type of mushrooms we found that mushrooms with 
+                    evanescent and pendant ring types were more likely to be edible while mushrooms with 
+                    a large and no ring type tend to be poisonous.</p>
+                </div>
+              </div>
+
+              <div class="clear"><br/></div>
+
+              <!-- plotly pie chart-->
+              <div id="pie-container">
+                <div id="piedesc" class="float-child">
+                  <h5>Dataset</h5>
+                  <p>This pie chart shows the distribution of poisonous vs edible mushrooms 
+                    in our dataset. The final data included 5,644 different mushroom varieties. 
+                    This data uses 22 different features to define each mushroom.</p>
+                  <p>Those features are: 
+                    <ul>
+                      <li>cap shape, cap surface, cap color;</li>
+                      <li>bruises, odor;</li>
+                      <li>gill attachment, gill spacing, gill size, gill color;</li>
+                      <li>stalk shape, stalk root;</li>
+                      <li>stalk surface above ring, stalk surface below ring;</li>
+                      <li>stalk color above ring, stalk color below ring;</li>
+                      <li>veil type, veil color;</li>
+                      <li>ring number, ring type;</li>
+                      <li>spore print color, population, habitat</li>
+                    </ul></p>
+                </div>
+                 <div id="pie" class="float-child"></div>
+              </div>
+
+              <div class="clear"><br/></div>
+
+              <div id="conclusion">
+                <h5>Data Determination</h5>
+                <p>Our selected machine learning model XGBoost returned an accuracy score of 1.0 during 
+                  training. This suggests that our data had clear correlations and was well-separated 
+                  when determining if a mushroom is edible or not.</p>
+              </div>
+            </div>
         </div>
         <br/><br/><br/><br/>
     </div>
@@ -93,9 +189,8 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-</body>
-
     <!-- Plotly -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+</body>
 </html>

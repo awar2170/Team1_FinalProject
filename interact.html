@@ -17,16 +17,12 @@
 
     <!-- D3 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    
-    <!-- Plotly -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!-- Site JS -->
     <script type="text/javascript" src="/static/js/app.js"></script>
-    <script type="text/javascript" src="/static/js/plots.js" defer></script>
 
     <!-- Page Title -->
-    <title>UNC Bootcamp | Team 1 | Mushroom Classification</title>
+    <title>Mushroom Classification | Team 1 | UNC Bootcamp - Nov 21</title>
 </head>
 <body>
     <!-- Header -->
@@ -50,8 +46,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('history') }}">History</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link 4</a>
+              <li>
+                <a class="nav-link" href="https://docs.google.com/presentation/d/1sI6gqZy0YT5qKFDDn4DUgEhXgPRAEeRMMw7VchDkVEM/" target="_blank">Presentation</a>
               </li>
             </ul>
         </div>
@@ -130,10 +126,21 @@
             <!-- Right Column -->
             <div class="col-10">
                 <!-- display prediction results -->
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est.</p>
-                <p>Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem.</p>
+                <h1 style="color: rgb(40, 80, 0)">Play the role of mother nature</h1>
+                <p>Our analysis shows these are 4 of the most important features in 
+                    determining if a mushroom will be edible or not.</p>
+
+                <p><img src="static/images/criticalfeatures.png" width="546" alt="critical features"></p>
+
+                <br/>
+                <p>Using the dropdowns on the left, select the features of your mushroom, and our machine learning model 
+                    will determine if it is poisonous or edible.</p>
                 
+                <h5>Prediction<span style="font-size: 9pt;"><sup>*</sup></span>:</h5>
                 <p id=content></p>
+
+                <br/><br/><br/>
+                <p style="font-size: 9pt;"><sup>*</sup>For entertainment purposes only.</p>
             </div>
         </div>
         <br/><br/><br/><br/>
@@ -159,8 +166,4 @@
     </script>
 
 </body>
-    
-    <!-- Plotly -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
 </html>

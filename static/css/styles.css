@@ -1,3 +1,9 @@
+/* CSS */
+
+body {
+    font-size: 11pt;
+}
+
 .banner {
     background-color: rgb(180, 180, 180);
     background-image: url(/static/images/banner.jpg);
@@ -62,3 +68,57 @@
     color: #555;
     cursor: not-allowed;
   }
+
+#pie-container {
+    width: 100%;
+    padding: 5px;
+    height: 425px;
+    /* border: rgb(90, 90, 90) solid 1px; */
+}
+
+.float-child {
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding: 5px;
+    /* border: rgb(90, 90, 90) solid 1px; */
+}
+
+#pie {
+    padding-left: 80px;
+}
+
+#tableau {
+    width: 100%;
+    height: 460px;
+    padding: 5px;
+    /* border: rgb(90, 90, 90) solid 1px; */
+}
+
+.tableau-child {
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding: 5px;
+}
+
+#leadInfo {
+    width: 100%;
+    padding: 5px;
+    /* border: rgb(90, 90, 90) solid 1px; */
+}
+
+.lead-child {
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding: 5px;
+}
+
+#leadImg {
+    text-align: center;
+}
+
+.clear {
+    clear: both;
+}
