@@ -72,6 +72,8 @@
 
     * Slides: Presentation is drafted in [Google Slides](https://docs.google.com/presentation/d/12lNlyuxWgLuAV3Top4ni89GIcjQz9xi5oPzYISy7Gzc/edit?usp=sharing)
 
+    * Live Presentation: [Presentation rehearsal recording](https://drive.google.com/file/d/1qOAe7YOM8FN-5atYsRtnqkNoXsZo_a4h/view)
+
 2. GitHub Repository
     - Main Branch
         - All code in the main branch is production-ready.
