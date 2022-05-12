@@ -120,8 +120,8 @@
         - We are encoding it with OneHotEncoder and train.test.split from sklearn
         - No additional training will take place 
 
-    * Description of current accuracy score
-        - The accuracy score is 1.0, this is most likely due to the data being academic and created specifically for machine learning purposes
+    * Description of current accuracy score and confusion matrix
+        - The accuracy score is 1.0, this is most likely due to the data being academic and created specifically for machine learning purposes.  Due to the machine learning model we chose, there was no aaccompanying confusion matrix. 
 
 4. Database Integration 
     * Database stores [static data](https://github.com/awar2170/Team1_FinalProject/tree/main/static) for use during the project
