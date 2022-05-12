@@ -113,67 +113,18 @@ function sendData() {
 }
 
 // Update index.html to display the prediction result
+let myimg = "";
+
 function displayResults() {
-    let v = "This mushroom is likely to be " + predictText + ".";
+    if (predictText == "edible") {
+        myimg = "check.png";
+    }
+    else {
+        myimg = "x.png";
+    };
+
+    let v = "<img src='static/images/" + myimg + "' width='30'> &nbsp; <strong>This mushroom is likely to be " + predictText + ".</strong>";
     const txtReplace = document.getElementById("content");
     txtReplace.innerHTML = v;
     //console.log("end of innerHTML: " + predictText);
 }
-
-
-// // feed selected dataset to machine learning and return output
-// function MLPredict(data) {
-//     // variablize data
-//     const myJSON = data;
-
-//     // variable to hold updated filter string
-//     let newStr = ''
-
-//     // Iterate through updated options to create data filter
-//     for (var v = 0; v < Object.keys(fvalues).length; v++) {
-//         newStr += "el." + Object.keys(fvalues)[v] + " == " + "'" + Object.values(fvalues)[v] + "'" + " && ";
-//     }
-
-//     // Drop ending '&&' text
-//     newFilter = newStr.slice(0,-3);
-//         //console.log("New filter string: " + newFilter);
-
-//     let filtered = myJSON.filter(function (el) {
-//         return eval(newFilter);
-//       });
-
-//     // pass data to a variable
-//     const result_dict = JSON.stringify(filtered);
-//         //console.log(result_dict);
-//     passData = result_dict;
-//       console.log(passData);
-
-//     // get count of total result rows
-//     for (var i = 0; i < filtered.length; i++) {
-//         // do nothing
-//     }
-//     let rcount = i;
-//         //console.log(rcount);
-
-//     // disable submit button if no results
-//     const button = document.getElementById('ML-button');
-//     if (rcount < 1) {
-//         button.disabled = true;
-//     }
-//     else {
-//         button.disabled = false;
-//     }
-
-//     // update query results count display
-//     // const divCount = document.getElementById("rdisplay");
-//     // divCount.innerHTML = "";
-//     // divCount.innerHTML = "&nbsp;Query Results: " + rcount;
-
-//     // temporary
-//     //const divContent = document.getElementById("content");
-//     //divContent.innerHTML = "";
-//     //divContent.innerHTML = result_dict;
-// };
-
-const test = fetch("/mushrooms").then(res => res.json())
-console.log(test)

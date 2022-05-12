@@ -46,7 +46,7 @@ def runML(data):
     web_df["Poisonous or Edible"] = 'p'     # temporary value for encoder
     web_df = web_df[['Poisonous or Edible','Bruises', 'Odor', 'stalk_shape', 'ring_type']] # set column order
 
-    print(web_df, flush=True)
+    # print(web_df, flush=True)
 
     # encode the filtered dataset (returns 4 features)
     # X, y = encodeData(web_df)
@@ -67,6 +67,6 @@ def runML(data):
     else:
          display["result"] = "edible"
     
-    print(f"Prediction from runML(): {display}", flush=True)
+    # print(f"Prediction from runML(): {display}", flush=True)
 
     return display

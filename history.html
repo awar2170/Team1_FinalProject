@@ -18,15 +18,11 @@
     <!-- D3 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
-    <!-- Plotly -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
     <!-- Site JS -->
     <script type="text/javascript" src="/static/js/app.js"></script>
-    <script type="text/javascript" src="/static/js/plots.js" defer></script>
 
     <!-- Page Title -->
-    <title>UNC Bootcamp | Team 1 | Mushroom Classification</title>
+    <title>Mushroom Classification | Team 1 | UNC Bootcamp - Nov 21</title>
 </head>
 <body>
     <!-- Header -->
@@ -50,8 +46,8 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('history') }}">History</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link 4</a>
+            <li>
+              <a class="nav-link" href="https://docs.google.com/presentation/d/1sI6gqZy0YT5qKFDDn4DUgEhXgPRAEeRMMw7VchDkVEM/" target="_blank">Presentation</a>
             </li>
           </ul>
       </div>
@@ -62,9 +58,18 @@
         <div class="row align-items-start">
             <!-- All Column -->
             <div class="col-12">
+
+                <!-- The Modal -->
+                <div id="modal" class="modal">
+                  <span id="modal-close" class="modal-close">&times;</span>
+                  <img id="modal-content" class="modal-content">
+                  <div id="modal-caption" class="modal-caption"></div>
+                </div>
+
+                <!-- main content -->
                 <h2>Objective</h2>
                 <p>Our objective with this project was to create a machine learning model that could accurately predict 
-                  if a mushroom would be edible or poisonous based on its physical characteristics.</p>
+                  if a mushroom would be edible or poisonous based on its physical features.</p>
 
                 <br/>
 
@@ -95,7 +100,7 @@
                 </ul>
                 <h5>Visualization</h5>
                 <ul>
-                  <li>Development: Tableau, Plotly, PowerPoint, Google Slides</li>
+                  <li>Development: R, Tableau, Plotly, PowerPoint, Google Slides</li>
                 </ul>
                 <h5>Other</h5>
                 <ul>
@@ -105,19 +110,71 @@
                 <br/>
 
                 <h2>Data Exploration & Analysis</h2>
-                <p>Some text here about:
-                  <ul>
-                    <li>file selection</li>
-                    <li>data cleaning</li>
-                    <li>machine learning testing / results</li>
-                    <li>feature selection</li>
-                  </ul>
+                  <h5>Data Selection</h5>
+                  <p>After researching several topics for data, we settled on mushrooms. The data available 
+                    was great for machine learning applications. The source data is described as:</p>
+                  
+                  <p>"Bookbased mushroom data set, describing physical features, binary 
+                    classification in poisonous or edible. Data Set Description Files are reported for 
+                    two data sets: Primary and Secondary. The primary data set encodes the textbook 
+                    mushroom entries, while the secondary data set is a pilot data, result of 
+                    simulation."</p>
+
+                  <h5>Data Preprocessing</h5>
+                  <p>In order to begin working with our dataset, we had to make a few adjustments to 
+                    the CSV file. We first eliminated all null values from the primary and secondary 
+                    dataset, including the placeholder “?” that was representing nulls in the 
+                    dataset. Null values adversely affect the performance and accuracy of any machine 
+                    learning algorithm. So, it is important to remove null values before applying a 
+                    machine learning algorithm to the dataset. Next, we renamed the columns so the 
+                    primary and secondary datasets could merge in a clean manner. Lastly, we dropped 
+                    any columns that were not included in both datasets to integrate the two datasets.</p>
                 </p>
 
-                <br/>
+                <h5>Preliminary Feature Engineering and Feature Selection</h5>
+                <p>We tested and compared multiple features for the input of the machine learning 
+                  model. The inputs tested included <a href="static/images/randomforest.png" target="_blank">RandomForest</a>, 
+                  <a href="static/images/ML-tensorflow.png" target="_blank">TensorFlow</a>, <a href="static/images/Correlation_point_5.png" target="_blank">Correlation Analysis</a> 
+                  (using R), and XGBoost (img: <a href="static/images/xgboost1.jpg" target="_blank">1</a>, <a href="static/images/xgboost2.jpg" target="_blank">2</a>). We concluded XGBoost was the best option for our project 
+                  and will allow the user to properly input the variables to predict if the mushroom 
+                  is poisonous or edible.</p>
 
-                <h2>Results</h2>
-                <p>Some text here about our final decisions, leading to the information on the main page.</p>
+                <h5>Splitting the Data into Training and Testing Sets</h5>
+                <p>The data was trained, tested, and split by using skelearn.model_selection and 
+                  train_test_split functions. Training data is a portion of our actual dataset that 
+                  is fed into the machine learning model to discover and learn patterns. Once the 
+                  machine learning model is built with the training data, you need unseen data, or 
+                  testing data, to test your model. Testing data is used to analyze the performance 
+                  of the model’s training and will adjust it for the best results.</p>
+
+                <h5>Training the model </h5>
+                <p>The model was encoded using OneHotEncoder and train_test_split from sklearn. These 
+                  functions allowed us to teach the model to classify certain objects according to 
+                  their properties.</p>
+
+                <h5>Accuracy Score</h5>
+                <p>The accuracy score is used in classification problems to tell the percentage of 
+                  accurate predictions. It is calculated by dividing the number of correct predictions 
+                  by the total number of predictions.</p>
+                <p>The accuracy score for our model was 1.0 which tells us that our model is likely 
+                  sufficient in predicting a correct outcome based on the given inputs.</p>
+
+                <h5>Limitations and Benefits of using XGBoost </h5>
+                <p><span style="text-decoration: underline;">Advantages</span>
+                <ul>
+                  <li>Regularization which helps avoid overfitting</li>
+                  <li>In-built cross-validation</li>
+                  <li>Parallel Processing</li>
+                  <li>Tree pruning using max_depth approach</li>
+                </ul></p>
+                <p><span style="text-decoration: underline;">Disadvantages</span>
+                <ul>
+                  <li>Sensitive to outliers</li>
+                  <li>Poor performance on imbalanced data</li>
+                  <li>Black-Box Nature is not always straightforward in explaining what is happening in 
+                    the background</li>
+                </ul></p>
+
             </div>
         </div>
         <br/><br/><br/><br/>
@@ -136,10 +193,6 @@
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
 </body>
-  
-    <!-- Plotly -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </html>
